@@ -3,20 +3,14 @@ import csv
 import pandas as pd
 
 
-
-
-
-import pandas as pd
-
-os.chdir("Datos")
-
 ciudades = set()
 Grafo = [[None] * 49] * 49
 
 datos = pd.read_csv("Datos vias Colombia.csv")
 ciudades.update(datos["A"].tolist() + datos["B"].tolist())
-print(ciudades)
+#print(ciudades)
  
+os.chdir("..")
     
 
 def carretera_unica(a,b):
