@@ -12,8 +12,9 @@ ciudad.update(datos["A"].tolist() + datos["B"].tolist())
 ciudades = sorted(list(ciudad))
 for i in range(len(datos)):
     Grafo[ciudades.index(datos.iloc[i]["A"])][ciudades.index(datos.iloc[i]["B"])] = (datos.iloc[i]["KM"], datos.iloc[i]["Minutos"])
+    Grafo[ciudades.index(datos.iloc[i]["B"])][ciudades.index(datos.iloc[i]["A"])] = (datos.iloc[i]["KM"], datos.iloc[i]["Minutos"])
 
-
+print(Grafo)
 
 
 
