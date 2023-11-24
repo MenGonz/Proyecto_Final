@@ -4,13 +4,16 @@ import pandas as pd
 
 os.chdir("Datos")
 
-ciudades = set()
+ciudad = set()
 Grafo = [[None] * 49] * 49
 
 datos = pd.read_csv("Datos vias Colombia.csv")
-ciudades.update(datos["A"].tolist() + datos["B"].tolist())
-print(ciudades)
- 
+ciudad.update(datos["A"].tolist() + datos["B"].tolist())
+ciudades = sorted(list(ciudad))
+for i in range(len(datos)):
+    Grafo[ciudades.index(datos.iloc[i]["A"])][ciudades.index(datos.iloc[i]["B"])] = (datos.iloc[i]["KM"], datos.iloc[i]["Minutos"])
+
+
 
 
 
