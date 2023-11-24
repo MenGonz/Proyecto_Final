@@ -7,6 +7,7 @@ os.chdir("Datos")
 ciudad = set()
 Grafo = [[None] * 49] * 49
 
+
 datos = pd.read_csv("Datos vias Colombia.csv")
 ciudad.update(datos["A"].tolist() + datos["B"].tolist())
 ciudades = sorted(list(ciudad))
