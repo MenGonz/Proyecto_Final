@@ -16,14 +16,11 @@ for i in range(len(datos)):
 
 print(Grafo)
 
-
-
-
-
-
-
-def carretera_unica(matriz,a,b):
-    comprobante = True
+def carretera_unica(a,b):
+    if Grafo[ciudades.index(a)][ciudades.index(b)] == None:
+        comprobante = "No hay ninguna via entre las ciudades"
+    else:
+        comprobante = "La via entre " + a + " y " + b + " tiene " + Grafo[ciudades.index(a)][ciudades.index(b)][0] +  " kilometros y un tiempo de recorrido de " + Grafo[ciudades.index(a)][ciudades.index(b)][1] + " minutos" 
     return comprobante
 
 def Dijkstra(matriz,a,b,indice):
@@ -40,6 +37,5 @@ def ruta_corta_minutos(matriz,a,b):
     indice = 1
     ruta = Dijkstra(matriz,a,b,indice) #indice 1 de la tupla
     return ruta
-
 
 
