@@ -1,5 +1,11 @@
 import os
 import csv
+import pandas as pd
+
+
+
+
+
 os.chdir("Datos")
 ciudades = set()
 Grafo = [[None] * 49] * 49
@@ -14,11 +20,8 @@ with open("Datos vias Colombia.csv") as f:
         if row[0] in ciudades:
             arista = (row[2], row[3])
             Grafo[ciudades.index(row[0])][ciudades.index(row[1])] = arista
-   
-print(ciudades)         
-print(Grafo)
+os.chdir("..")   
 
-    
 
 def carretera_unica(a,b):
     comprobante=True
@@ -31,4 +34,6 @@ def ruta_corta_kilometros(a,b):
 def ruta_corta_minutos(a,b):
     ruta=None #indice 1 de la tupla
     return ruta
+
+
 
