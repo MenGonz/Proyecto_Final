@@ -2,12 +2,6 @@ import os
 import csv
 import pandas as pd
 
-
-
-
-
-import pandas as pd
-
 os.chdir("Datos")
 
 ciudades = set()
