@@ -17,29 +17,46 @@ for i in range(len(datos)):
 print(Grafo)
 
 
+def carretera_unica(Grafo,a,b):
+    com = True
+    return com
 
-
-
-
-
-def carretera_unica(matriz,a,b):
-    comprobante = True
-    return comprobante
-
-def Dijkstra(matriz,a,b,indice):
+def Dijkstra(Grafo,a,b,indice):
     #Camino mas corto por el indice que se especifico 
     ruta = None 
     return ruta
 
-def ruta_corta_kilometros(matriz,a,b):
+def ruta_corta_kilometros(Grafo,a,b):
     indice = 0
-    ruta = Dijkstra(matriz,a,b,indice) #indice 0 de la tupla
+    ruta = Dijkstra(Grafo,a,b,indice) #indice 0 de la tupla
     return ruta 
 
-def ruta_corta_minutos(matriz,a,b):
+def ruta_corta_minutos(Grafo,a,b):
     indice = 1
-    ruta = Dijkstra(matriz,a,b,indice) #indice 1 de la tupla
+    ruta = Dijkstra(Grafo,a,b,indice) #indice 1 de la tupla
     return ruta
 
+comprobante = str(print("¿Desea saber si una ciudad esta conectada por una única carretera con otra?"))
+if comprobante == "si":
+    a = str(print("ingrese una ciudad"))
+    b = str(print("ingrese otra ciudad"))
+    com = carretera_unica(a,b)
+    if com:
+        print("Existe una conexión directa")
+    else:
+        print("No existe una conexión directa")
 
+comprobante = str(print("¿Desea saber el camino mas corto entre dos cuidades respecto a los kilometros?"))
+if comprobante == "si":
+    a = str(print("ingrese una ciudad"))
+    b = str(print("ingrese otra ciudad"))
+    ruta = ruta_corta_kilometros(Grafo,a,b)
+    print(ruta)
+
+comprobante = str(print("¿Desea saber el camino mas corto entre dos cuidades respecto a los minutos?"))
+if comprobante == "si":
+    a = str(print("ingrese una ciudad"))
+    b = str(print("ingrese otra ciudad"))
+    ruta = ruta_corta_minutos(Grafo,a,b)
+    print(ruta)
 
