@@ -48,19 +48,25 @@ if comprobante == "si":
      com = carretera_unica(a,b)
      print(com)
     else:
-        print("Alguna de las cuidades especificadas no se es valida")
+        print("Alguna de las cuidades especificadas no es valida")
 
 comprobante = str(input(print("¿Desea saber el camino mas corto entre dos cuidades respecto a los kilometros?")))
 if comprobante == "si":
     a = str(input(print("ingrese una ciudad")))
     b = str(input(print("ingrese otra ciudad")))
-    ruta = ruta_corta_kilometros(Grafo,a,b)
-    print("La ruta mas corta en función de kilometros es",ruta)
+    if a and b in ciudades:
+     ruta = ruta_corta_kilometros(Grafo,a,b)
+     print("La ruta mas corta en función de kilometros es",ruta)
+    else:
+        print("Alguna de las cuidades especificadas no es valida")
 
 comprobante = str(input(print("¿Desea saber el camino mas corto entre dos cuidades respecto a los minutos?")))
 if comprobante == "si":
     a = str(input(print("ingrese una ciudad")))
     b = str(input(print("ingrese otra ciudad")))
-    ruta = ruta_corta_minutos(Grafo,a,b)
-    print("La ruta mas corta en función de minutos es",ruta)
+    if a and b in ciudades:
+     ruta = ruta_corta_kilometros(Grafo,a,b)
+     print("La ruta mas corta en función de minutos es",ruta)
+    else:
+        print("Alguna de las cuidades especificadas no es valida")
 
