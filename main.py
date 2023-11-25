@@ -25,7 +25,7 @@ def carretera_unica(a,b):
         comprobante = "La via entre " + a + " y " + b + " tiene " + str(Grafo[ciudades.index(a)][ciudades.index(b)][0]) +  " kilometros y un tiempo de recorrido de " + str(Grafo[ciudades.index(a)][ciudades.index(b)][1]) + " minutos" 
     return comprobante
 
-def Dijkstra(matriz,a,b,indice):
+def Dijkstra(Grafo,a,b,indice):
     #Camino mas corto por el indice que se especifico 
     ruta = None 
     return ruta
