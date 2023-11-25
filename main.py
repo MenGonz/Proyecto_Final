@@ -8,20 +8,20 @@ ciudad = set()
 Grafo = [[None] * 49] * 49
 
 datos = pd.read_csv("Datos vias Colombia.csv")
-ciudad.update(datos["A"].tolist() + datos["B"].tolist())
-ciudades = sorted(list(ciudad))
-for i in range(len(datos)):
-    Grafo[ciudades.index(datos.iloc[i]["A"])][ciudades.index(datos.iloc[i]["B"])] = (datos.iloc[i]["KM"], datos.iloc[i]["Minutos"])
-    Grafo[ciudades.index(datos.iloc[i]["B"])][ciudades.index(datos.iloc[i]["A"])] = (datos.iloc[i]["KM"], datos.iloc[i]["Minutos"])
+ciudades.update(datos["A"].tolist() + datos["B"].tolist())
+#print(ciudades)
+ 
+os.chdir("..")
+    
 
-print(Grafo)
+def carretera_unica(a,b):
+    if Grafo[ciudades.index(a)][ciudades.index(b)] == None:
+        comprobante = "No hay ninguna via entre las ciudades"
+    else:
+        comprobante = "La via entre " + a + " y " + b + " tiene " + Grafo[ciudades.index(a)][ciudades.index(b)][0] +  " kilometros y un tiempo de recorrido de " + Grafo[ciudades.index(a)][ciudades.index(b)][1] + " minutos" 
+    return comprobante
 
-
-def carretera_unica(Grafo,a,b):
-    com = True
-    return com
-
-def Dijkstra(Grafo,a,b,indice):
+def Dijkstra(matriz,a,b,indice):
     #Camino mas corto por el indice que se especifico 
     ruta = None 
     return ruta
