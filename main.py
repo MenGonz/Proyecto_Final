@@ -52,12 +52,14 @@ def dijkstra(M, inicial, terminal): #definimos el algoritmo dijkstra como una fu
                 p[v] = u
             
     camino = []
-    camino.append(terminal)
+    
     t = terminal
+    camino.append(t)
     while p[t] != inicial:
         t = p[t]
-        camino.append(p[t])
+        camino.append(t)
         
+    camino.append(inicial)
         
     camino.reverse()
     
@@ -88,6 +90,7 @@ def ruta_corta_minutos(Grafo,a,b):
     return ruta
 
 comprobante = str(input(print("¿Desea saber si una ciudad esta conectada por una única carretera con otra?")))
+
 if comprobante == "si":
     a = str(input(print("ingrese una ciudad")))
     b = str(input(print("ingrese otra ciudad")))
