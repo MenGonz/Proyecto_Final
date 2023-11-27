@@ -9,7 +9,7 @@ Grafo = [[0 for i in range(48)] for j in range(48)]
 datos = pd.read_csv("Datos vias Colombia.csv")
 ciudad.update(datos["A"].tolist() + datos["B"].tolist())
 ciudades = sorted(list(ciudad))
-print(ciudades)
+#print(ciudades)
 for i in range(len(datos)):
     Grafo[ciudades.index(datos.iloc[i]["A"])][ciudades.index(datos.iloc[i]["B"])] = (datos.iloc[i]["KM"], datos.iloc[i]["Minutos"])
 #print(str(Grafo[ciudades.index('Medellin')][ciudades.index('Pereira')][0]))
@@ -89,31 +89,31 @@ def ruta_corta_minutos(Grafo,a,b):
     ruta = Dijkstra(Grafo,a,b,indice) #indice 1 de la tupla
     return ruta
 
-comprobante = str(input(print("¿Desea saber si una ciudad esta conectada por una única carretera con otra?")))
+comprobante = str(input("¿Desea saber si una ciudad esta conectada por una única carretera con otra?: "))
 
 if comprobante == "si":
-    a = str(input(print("ingrese una ciudad")))
-    b = str(input(print("ingrese otra ciudad")))
+    a = str(input("ingrese una ciudad: "))
+    b = str(input("ingrese otra ciudad: "))
     if a and b in ciudades:
      com = carretera_unica(a,b)
      print(com)
     else:
         print("Alguna de las cuidades especificadas no es valida")
 
-comprobante = str(input(print("¿Desea saber el camino mas corto entre dos cuidades respecto a los kilometros?")))
+comprobante = str(input("¿Desea saber el camino mas corto entre dos cuidades respecto a los kilometros?: "))
 if comprobante == "si":
-    a = str(input(print("ingrese una ciudad")))
-    b = str(input(print("ingrese otra ciudad")))
+    a = str(input("ingrese una ciudad: "))
+    b = str(input("ingrese otra ciudad: "))
     if a and b in ciudades:
      ruta = ruta_corta_kilometros(Grafo,a,b)
      print("La ruta mas corta en función de kilometros es",ruta)
     else:
         print("Alguna de las cuidades especificadas no es valida")
 
-comprobante = str(input(print("¿Desea saber el camino mas corto entre dos cuidades respecto a los minutos?")))
+comprobante = str(input("¿Desea saber el camino mas corto entre dos cuidades respecto a los minutos?: "))
 if comprobante == "si":
-    a = str(input(print("ingrese una ciudad")))
-    b = str(input(print("ingrese otra ciudad")))
+    a = str(input("ingrese una ciudad: "))
+    b = str(input("ingrese otra ciudad: "))
     if a and b in ciudades:
      ruta = ruta_corta_kilometros(Grafo,a,b)
      print("La ruta mas corta en función de minutos es",ruta)
