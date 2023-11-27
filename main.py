@@ -15,7 +15,7 @@ for i in range(len(datos)):
 #print(str(Grafo[ciudades.index('Medellin')][ciudades.index('Pereira')][0]))
 
 def carretera_unica(a,b):
-    if Grafo[ciudades.index(a)][ciudades.index(b)] == None:
+    if Grafo[ciudades.index(a)][ciudades.index(b)] == 0:
         comprobante = "No hay una via entre las ciudades"
     else:
         comprobante = "La via entre " + a + " y " + b + " tiene " + str(Grafo[ciudades.index(a)][ciudades.index(b)][0]) +  " kilometros y un tiempo de recorrido de " + str(Grafo[ciudades.index(a)][ciudades.index(b)][1]) + " minutos" 
